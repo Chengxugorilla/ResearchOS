@@ -1,0 +1,4 @@
+interface:
+  display_name: "ResearchOS 文献入库"
+  short_description: "按文献库规范整理本地论文、书籍和报告，建立元数据与笔记并更新索引"
+  default_prompt: "使用 $researchos-literature-intake 将指定文献按 ResearchOS 规范入库。"

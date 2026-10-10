@@ -1,0 +1,118 @@
+# ResearchOS：默认用于公开分享框架，不同步个人研究资料。
+# README.md 与目录占位文件保留；需要公开具体内容时，逐项添加例外。
+# 忽略规则不会删除本地文件，也不会移除已经被 Git 跟踪的文件。
+
+# 1. 个人研究内容：默认排除整个目录的内容，而非仅排除数据扩展名。
+# 系统中的个人配置、长期知识、项目、构想、共享数据及历史资料均留在本地。
+/00_System/*
+!/00_System/README.md
+!/00_System/.gitkeep
+
+/01_Projects/*
+!/01_Projects/README.md
+!/01_Projects/.gitkeep
+
+/02_Knowledge/*
+!/02_Knowledge/README.md
+!/02_Knowledge/.gitkeep
+
+/04_Ideas/*
+!/04_Ideas/README.md
+!/04_Ideas/.gitkeep
+
+/05_Resources/*
+!/05_Resources/README.md
+!/05_Resources/.gitkeep
+
+/07_Inbox/*
+!/07_Inbox/README.md
+!/07_Inbox/.gitkeep
+
+/99_Archive/*
+!/99_Archive/README.md
+!/99_Archive/.gitkeep
+
+# 2. 文献库：仅公开组织规范和目录结构。
+# 原文、个人元数据、阅读笔记、研究主题及真实文献索引默认不公开。
+/03_Literature/*
+!/03_Literature/README.md
+!/03_Literature/.gitkeep
+!/03_Literature/01_Papers/
+!/03_Literature/02_Books/
+!/03_Literature/03_Reports/
+!/03_Literature/04_Topics/
+
+/03_Literature/01_Papers/*
+!/03_Literature/01_Papers/.gitkeep
+/03_Literature/02_Books/*
+!/03_Literature/02_Books/.gitkeep
+/03_Literature/03_Reports/*
+!/03_Literature/03_Reports/.gitkeep
+/03_Literature/04_Topics/*
+!/03_Literature/04_Topics/.gitkeep
+
+# 06_Workflows/ 默认保留可复用流程、脚本和 Skills；添加内容前检查是否含个人资料。
+# 不全局忽略 .md、.yaml、.json、.csv 或 .pdf，以便保留合法的框架配置和示例。
+
+# 3. 凭据与本机配置；仅允许明确命名为 example 的环境变量模板。
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+credentials.json
+secrets.json
+secrets.yaml
+secrets.yml
+.aws/
+.ssh/
+.codex/
+.claude/
+
+# 4. 操作系统、编辑器及临时文件。
+.DS_Store
+._*
+.Spotlight-V100/
+.Trashes/
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+~$*
+*.tmp
+*.temp
+*.log
+.cache/
+
+# 5. Python、Jupyter 与前端运行环境及构建产物。
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+node_modules/
+build/
+dist/
+
+# 如需公开某个项目，先取消对其父目录的忽略，再排除项目内的数据和结果。
+# 例外规则应放在文件末尾，并逐项审阅公开范围；不要直接强制添加真实资料。
